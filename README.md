@@ -11,6 +11,7 @@ Haoran Yang, Ruiqiang Ma, Gang Wang, Jien Kato
 -  CUDA 11.8
 ## Train and Test
 To simplify the training and evaluation process, we provide a one-stop running procedure. You can complete the training and evaluation directly on your local machine by running `AIGID.py`, or by running it using the command below. 
+
 `python AIGID.py`
 
 We placed the weight checkpoints for the classification model in the `weight` directory.
