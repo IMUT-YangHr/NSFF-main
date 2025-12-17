@@ -1,16 +1,25 @@
 # Copyright © 2025107441785
 # This code is protected by copyright law.
+
+# Regarding DINOv2
+# We hereby declare that we have only modified line 58 of the source code in `dinov2/hub/backbone.py`, and the modified content is as follows:
+# state_dict = torch.hub.load_state_dict_from_url(url=url,model_dir="/NSFF-main/dinov2/weight", map_location="cpu")
+
+# Patent Declaration
+# Our method is patented (2025107441785) and protected by copyright law. This patent primarily targets software or computer devices developed based on our method, and its content is completely independent of DINOv2.
+# This patent covers only one method for generating image detection. While this method is inspired by DINOv2, it does not include the DINOv2 algorithm, technology, or implementation details.
+
+# License Notice
+# Our license (GPL-3.0) applies only to our own method and does not involve the DINOv2 repository.
 # You are free to:
-# - View, download, and use this code for personal study, research, or evaluation.
-# - Modify the source code and distribute your modified version, provided this notice is retained.
-#
-# Without explicit written permission, you may not:
-# - Use this code for any commercial purpose, including but not limited to sale, rental, or distribution as part of a commercial product.
-# - Provide technical support or services based on this code to third parties in any form for remuneration.
-#
-# For commercial usage licences, please contact: wg@imut.edu.cn, marq@imut.edu.cn.
-#
-# This code is provided ‘as is’ without any warranty.
+# View, download, and use our code for personal study, research, or evaluation.
+# Modify the source code and distribute your modified versions, but must retain this statement.
+
+# Without express written permission, you may not:
+# Use our code for any commercial purpose, including but not limited to sale, rental, or provision as part of a commercial product.
+# Provide technical support or services based on our code to third parties in any form for compensation.
+
+# This code is provided "as is," and the authors assume no responsibility.
 
 import torch
 import torch.nn as nn
