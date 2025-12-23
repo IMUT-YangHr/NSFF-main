@@ -124,6 +124,6 @@ def NFE_GHPF(image, D0 = None):
     image = np.array(image)
     patches_sorted = extract_patches_and_calculate_total_grayscale_fluctuation(image, patch_size=32)
     poor_texture_img = reconstruct_image_from_portions(patches_sorted)
-    GHPF_poor_texture_img = apply_GHPF(poor_texture_img, D0)   # 高斯高通滤波器
+    GHPF_poor_texture_img = apply_GHPF(poor_texture_img, D0)
     image = Image.fromarray(GHPF_poor_texture_img)
     return image
