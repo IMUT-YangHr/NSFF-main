@@ -66,13 +66,13 @@ def random_data_augmentation(image):
 def random_postprocessing_perturbation(image, mode=None):
     if mode in ["all", "jpeg"] and random.random() < 0.3:
         buffer = io.BytesIO()
-        image.save(buffer, format="JPEG", quality=75)  # 压缩质量75 (0-100)
+        image.save(buffer, format="JPEG", quality=75)
         buffer.seek(0)
         image = Image.open(buffer).convert("RGB")
 
     if mode in ["all", "noise"] and random.random() < 0.3:
         image_array = np.array(image, dtype=np.float32)
-        noise = np.random.normal(0, 20, image_array.shape)  # 均值0，标准差20
+        noise = np.random.normal(0, 20, image_array.shape)
         noisy_image_array = np.clip(image_array + noise, 0, 255).astype(np.uint8)
         image = Image.fromarray(noisy_image_array)
 
@@ -81,7 +81,7 @@ def random_postprocessing_perturbation(image, mode=None):
 
     if mode in ["all", "denoise"] and random.random() < 0.3:
         img_np = np.array(image)
-        den = cv2.fastNlMeansDenoisingColored(img_np, None, 10, 10, 7, 21)  # 亮度通道去噪强度 h = 10, 颜色通道去噪强度 hColor = 10, 模板窗口大小 templateWindowSize = 7, 搜索窗口大小 searchWindowSize = 21
+        den = cv2.fastNlMeansDenoisingColored(img_np, None, 10, 10, 7, 21)
         image = Image.fromarray(den)
 
     if mode in ["all", "resample"] and random.random() < 0.3:
@@ -91,7 +91,7 @@ def random_postprocessing_perturbation(image, mode=None):
         image = image.resize((w, h), resample=method)
 
     if mode in ["all", "resize256"] and random.random() < 0.3:
-        image = image.resize((256, 256), Image.BICUBIC)  # 放缩到256*256
+        image = image.resize((256, 256), Image.BICUBIC) 
 
     if mode in ["all", "resize512"] and random.random() < 0.3:
         image = image.resize((512, 512), Image.BICUBIC)
