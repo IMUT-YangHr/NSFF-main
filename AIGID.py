@@ -195,6 +195,7 @@ class DualBranchDataset(Dataset):
             # perturbation_mode = "resize256"
             # perturbation_mode = "resize512"
             # perturbation_mode = "resize1024"
+            perturbation_mode = None
             pil = random_postprocessing_perturbation(pil, mode=perturbation_mode)
 
         high = high_transform(pil)
